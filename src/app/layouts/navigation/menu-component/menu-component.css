@@ -1,0 +1,4 @@
+.mat-mdc-list-item:hover {
+  transition: box-shadow 0.3s ease;
+  border-radius: 5%;
+}

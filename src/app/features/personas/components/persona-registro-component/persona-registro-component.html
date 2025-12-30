@@ -1,0 +1,56 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Necesitamos tus siguientes datos</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="pt-10">
+      <form [formGroup]="registrarPersonaForm" (ngSubmit)="onSubmit()" class="login-form">
+
+        <!-- Nombre completo -->
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Nombre completo</mat-label>
+          <input matInput type="text" formControlName="nombre" autocomplete="name">
+          @if (nombre?.hasError('required') && nombre?.touched) {
+            <mat-error>El nombre completo es obligatorio</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Apellidos -->
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Apellidos</mat-label>
+          <input matInput type="text" formControlName="apellidos" autocomplete="family-name">
+          @if (apellidos?.hasError('required') && apellidos?.touched) {
+            <mat-error>Los apellidos son obligatorios</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Correo -->
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Correo</mat-label>
+          <input matInput type="email" formControlName="correo" autocomplete="email">
+          @if (correo?.hasError('required') && correo?.touched) {
+            <mat-error>El correo es obligatorio</mat-error>
+          }
+          @if (correo?.hasError('email') && correo?.touched) {
+            <mat-error>El formato del correo no es válido</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Celular -->
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Celular</mat-label>
+          <input matInput type="tel" formControlName="celular" autocomplete="tel">
+          @if (celular?.hasError('required') && celular?.touched) {
+            <mat-error>El celular es obligatorio</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Botón -->
+        <button mat-raised-button color="primary" type="submit" class="login-button">
+          Continuar
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

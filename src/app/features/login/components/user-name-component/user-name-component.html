@@ -1,0 +1,41 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar sesión</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="pt-10">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+        <!-- Correo -->
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Correo</mat-label>
+          <input matInput type="email" formControlName="username" autocomplete="email">
+          @if (usernameControl?.hasError('required') && usernameControl?.touched) {
+            <mat-error>El correo es obligatorio</mat-error>
+          }
+          @if (usernameControl?.hasError('email') && usernameControl?.touched) {
+            <mat-error>El formato del correo no es válido</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Contraseña -->
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" autocomplete="current-password">
+          @if (passwordControl?.hasError('required') && passwordControl?.touched) {
+            <mat-error>La contraseña es obligatoria</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Enlace a registro -->
+        <a routerLink="/persona/registro">Crear cuenta</a>
+
+        <!-- Botón de login -->
+        <button mat-raised-button color="primary" type="submit" class="login-button">
+          Entrar
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
