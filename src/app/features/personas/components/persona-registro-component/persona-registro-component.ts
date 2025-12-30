@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { PersonaService } from '../../../../core/persona/services/persona-service';
 import { PersonaRegistroRequest, PersonaRegistroResponse } from '../../../../core/persona/models/persona-interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-persona-registro',
@@ -22,8 +23,8 @@ import { PersonaRegistroRequest, PersonaRegistroResponse } from '../../../../cor
 export class PersonaRegistroComponent {
   private readonly personaService = inject(PersonaService);
   private readonly fb = inject(NonNullableFormBuilder);
+  private readonly router = inject(Router);
 
-  // ✅ Form tipado y más limpio
   registrarPersonaForm = this.fb.group({
     nombre: ['', Validators.required],
     apellidos: ['', Validators.required],
@@ -41,8 +42,7 @@ export class PersonaRegistroComponent {
 
     this.personaService.registrar(request).subscribe({
       next: (response: PersonaRegistroResponse) => {
-        console.log('Registro exitoso:', response);
-        // Aquí podrías mostrar un snackbar o redirigir
+        this.router.navigate(['/usuario/credenciales', response.datos]);
       },
       error: (error) => {
         console.error('Error al registrar persona:', error);

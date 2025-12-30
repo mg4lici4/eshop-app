@@ -12,11 +12,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class HeaderComponent {
   private readonly renderer = inject(Renderer2);
+  private mode: ColorScheme = ColorScheme.Light;
   private isOpen = false;
 
   @Output() readonly toggleDrawer = new EventEmitter<boolean>();
-
-  mode: 'dark_mode' | 'light_mode' = 'dark_mode';
 
   toggleDrawerMenu(): void {
     this.isOpen = !this.isOpen;
@@ -24,17 +23,17 @@ export class HeaderComponent {
   }
 
   toggleDarkMode(): void {
-    const isDark = this.mode === 'dark_mode';
-    const newMode = isDark ? 'light_mode' : 'dark_mode';
+    this.mode = this.mode === ColorScheme.Dark ? ColorScheme.Light : ColorScheme.Dark;
 
-    this.mode = newMode;
-
-    if (newMode === 'dark_mode') {
-      this.renderer.addClass(document.documentElement, 'dark-theme');
-      this.renderer.removeClass(document.documentElement, 'light-theme');
-    } else {
-      this.renderer.addClass(document.documentElement, 'light-theme');
-      this.renderer.removeClass(document.documentElement, 'dark-theme');
-    }
+    this.renderer.setStyle(
+      document.documentElement,
+      'color-scheme',
+      this.mode
+    );
   }
+}
+
+export enum ColorScheme {
+  Dark = 'dark',
+  Light = 'light'
 }

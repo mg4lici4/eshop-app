@@ -1,13 +1,10 @@
-<!-- <mat-drawer-container>
-    <mat-drawer #drawer mode="side">
-        <app-menu-component></app-menu-component>
-    </mat-drawer>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side">
+    <app-menu></app-menu>
+  </mat-drawer>
 
-    <mat-drawer-content>
-        <app-header-component (toggleDrawer)="onToggleDrawer($event)"></app-header-component>
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
-
-</mat-drawer-container> -->
-
-<router-outlet></router-outlet>
+  <mat-drawer-content>
+    <app-header (toggleDrawer)="onToggleDrawer($event)"></app-header>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
