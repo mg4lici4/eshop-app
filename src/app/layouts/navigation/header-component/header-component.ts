@@ -12,10 +12,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class HeaderComponent {
   private readonly renderer = inject(Renderer2);
-  private mode: ColorScheme = ColorScheme.Light;
   private isOpen = false;
 
   @Output() readonly toggleDrawer = new EventEmitter<boolean>();
+  mode: ColorScheme = ColorScheme.Light;
 
   toggleDrawerMenu(): void {
     this.isOpen = !this.isOpen;
