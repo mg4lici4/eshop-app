@@ -3,7 +3,8 @@ import { PersonaRegistroComponent } from './features/personas/components/persona
 import { UserNameComponent } from './features/login/components/user-name-component/user-name-component';
 import { authGuard } from './core/auth/auth-guard';
 import { UsuarioCredencialesComponent } from './features/usuarios/components/usuario-credenciales-component/usuario-credenciales-component';
-import { UsuarioComponent } from './features/usuarios/components/usuario-component/usuario-component';
+import { UsuarioSegundoFAComponent } from './features/usuarios/components/usuario-segundofa-component/usuario-segundofa-component';
+import { LoginSegundofaComponent } from './features/login/components/login-segundofa-component/login-segundofa-component';
 
 export const routes: Routes = [
   { path: 'home', component: PersonaRegistroComponent, canActivate: [authGuard] },
@@ -18,14 +19,30 @@ export const routes: Routes = [
   },
   {
     path: 'usuario',
-    component: UsuarioComponent,
     children: [
       {
-        path: 'credenciales/:personaId',
+        path: 'credenciales/:idPersona',
         component: UsuarioCredencialesComponent
+      },
+      {
+        path: 'credenciales/2fa/:idPersona',
+        component: UsuarioSegundoFAComponent
       }
     ]
   },
-  { path: 'login', component: UserNameComponent },
-  { path: '**', redirectTo: '/login' }
+  {
+    path: 'login',
+    children: [
+      {
+        path: 'username',
+        component: UserNameComponent
+
+      },
+      {
+        path: '2fa',
+        component: LoginSegundofaComponent
+      }
+    ]
+  },
+  { path: '**', redirectTo: '/login/username' }
 ];

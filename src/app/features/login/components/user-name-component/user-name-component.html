@@ -1,14 +1,14 @@
-<div class="login-container">
-  <mat-card class="login-card">
+<div class="app-container">
+  <mat-card >
     <mat-card-header>
       <mat-card-title>Iniciar sesión</mat-card-title>
     </mat-card-header>
 
     <mat-card-content class="pt-10">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="app-form">
 
         <!-- Correo -->
-        <mat-form-field appearance="outline" class="form-field">
+        <mat-form-field appearance="outline" class="app-form-field">
           <mat-label>Correo</mat-label>
           <input matInput type="email" formControlName="username" autocomplete="email">
           @if (usernameControl?.hasError('required') && usernameControl?.touched) {
@@ -20,7 +20,7 @@
         </mat-form-field>
 
         <!-- Contraseña -->
-        <mat-form-field appearance="outline" class="form-field">
+        <mat-form-field appearance="outline" class="app-form-field">
           <mat-label>Contraseña</mat-label>
           <input matInput type="password" formControlName="password" autocomplete="current-password">
           @if (passwordControl?.hasError('required') && passwordControl?.touched) {
@@ -32,7 +32,7 @@
         <a routerLink="/persona/registro">Crear cuenta</a>
 
         <!-- Botón de login -->
-        <button mat-raised-button color="primary" type="submit" class="login-button">
+        <button mat-raised-button color="primary" type="submit" class="app-button">
           Entrar
         </button>
       </form>

@@ -1,1 +1,35 @@
-<p>usuario-credenciales-component works!</p>
+<div class="app-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Necesitamos tus siguientes datos</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="pt-10">
+      <form [formGroup]="registrarCredencialesForm" (ngSubmit)="onSubmit()" class="app-form">
+
+        <!-- Nombre completo -->
+        <mat-form-field appearance="outline" class="app-form-field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="contrasenia" autocomplete="name">
+          @if (contrasenia?.hasError('required') && contrasenia?.touched) {
+          <mat-error>La contraseña es obligatoria</mat-error>
+          }
+        </mat-form-field>
+
+        <!-- Apellidos -->
+        <mat-form-field appearance="outline" class="app-form-field">
+          <mat-label>Confirmar contraseña</mat-label>
+          <input matInput type="password" formControlName="confContrasenia" autocomplete="family-name">
+          @if (registrarCredencialesForm.hasError('mismatch')
+          && confContrasenia?.touched) {
+          <mat-error>Las contraseñas no coinciden.</mat-error>
+          }
+        </mat-form-field>
+        <!-- Botón -->
+        <button mat-raised-button color="primary" type="submit" class="app-button">
+          Continuar
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

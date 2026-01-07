@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UsuarioGenerarSecretoComponent } from './usuario-generar-secreto-component';
+import { UsuarioSegundoFAComponent } from './usuario-segundofa-component';
 
 describe('UsuarioGenerarSecretoComponent', () => {
-  let component: UsuarioGenerarSecretoComponent;
-  let fixture: ComponentFixture<UsuarioGenerarSecretoComponent>;
+  let component: UsuarioSegundoFAComponent;
+  let fixture: ComponentFixture<UsuarioSegundoFAComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UsuarioGenerarSecretoComponent]
+      imports: [UsuarioSegundoFAComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UsuarioGenerarSecretoComponent);
+    fixture = TestBed.createComponent(UsuarioSegundoFAComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

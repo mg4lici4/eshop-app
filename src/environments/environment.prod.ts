@@ -7,7 +7,11 @@ export const environment = {
             registro: 'http://localhost:8080/api/v1/eshop/Persona'
         },
         usuarios:{
-            secreto: 'http://localhost:8080/api/v1/eshop/Usuario/secreto'
+            registrar: 'http://localhost:8080/api/v1/eshop/Usuario',
+            segundofa: {
+                generar: 'http://localhost:8080/api/v1/eshop/Usuario/segundofa',
+                activar: 'http://localhost:8080/api/v1/eshop/Usuario/segundofa/activar'
+            }
         }
     },
     featureFlag: false
