@@ -1,9 +1,12 @@
 #!/bin/sh
 
-# Sustituir variables en todos los archivos JS generados por Angular
-for file in /usr/share/nginx/html/*.js; do
-  envsubst '$LOGIN $PERSONA_REGISTRO $USUARIO_REGISTRAR $USUARIO_SEGUNDOFA_GENERAR $USUARIO_SEGUNDOFA_ACTIVAR $FEATURE_FLAG' \
-    < "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+echo "🔧 Iniciando sustitución de variables en archivos JS y HTML..."
+
+for file in /usr/share/nginx/html/*.js /usr/share/nginx/html/*.html; do
+  echo "Procesando $file..."
+  envsubst < "$file" > "$file.tmp"
+  mv "$file.tmp" "$file"
 done
 
+echo "✅ Sustitución terminada. Arrancando Nginx..."
 exec nginx -g 'daemon off;'
