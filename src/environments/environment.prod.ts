@@ -1,18 +1,15 @@
-// environment.prod.ts
 export const environment = {
-    production: true,
-    endpoints: {
-        login: 'http://localhost:8080/api/v1/eshop/Login',
-        personas:{
-            registro: 'http://localhost:8080/api/v1/eshop/Persona'
-        },
-        usuarios:{
-            registrar: 'http://localhost:8080/api/v1/eshop/Usuario',
-            segundofa: {
-                generar: 'http://localhost:8080/api/v1/eshop/Usuario/segundofa',
-                activar: 'http://localhost:8080/api/v1/eshop/Usuario/segundofa/activar'
-            }
-        }
-    },
-    featureFlag: false
+  production: true,
+  endpoints: {
+    login: '__LOGIN__',
+    personas: { registro: '__PERSONA_REGISTRO__' },
+    usuarios: {
+      registrar: '__USUARIO_REGISTRAR__',
+      segundofa: {
+        generar: '__USUARIO_SEGUNDOFA_GENERAR__',
+        activar: '__USUARIO_SEGUNDOFA_ACTIVAR__'
+      }
+    }
+  },
+  featureFlag: '__FEATURE_FLAG__'
 };
