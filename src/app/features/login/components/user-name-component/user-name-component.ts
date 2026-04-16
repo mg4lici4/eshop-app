@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../../../../core/auth/services/auth-service';
 import { AuthCredencialesRequest, AuthCredencialesResponse } from '../../../../core/auth/models/auth-interface';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-name',
@@ -24,8 +24,8 @@ import { RouterLink } from '@angular/router';
 export class UserNameComponent {
   private readonly authService = inject(AuthService);
   private readonly fb = inject(NonNullableFormBuilder);
+  private readonly router = inject(Router);
 
-  // ✅ Form tipado y no-nullable
   loginForm = this.fb.group({
     username: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
@@ -42,7 +42,8 @@ export class UserNameComponent {
 
     this.authService.validarCredenciales(request).subscribe({
       next: (response: AuthCredencialesResponse) => {
-        console.log('Login exitoso:', response);
+        localStorage.setItem('token', response.datos);
+        this.router.navigate(['/login/2fa']);
       },
       error: (error) => {
         console.error('Error en login:', error);
