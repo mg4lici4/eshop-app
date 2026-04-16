@@ -10,16 +10,16 @@
         <!-- OTP -->
         <mat-form-field appearance="outline" class="app-form-field">
           <mat-label>OTP</mat-label>
-          <input matInput type="password" inputmode="numeric" formControlName="otp" autocomplete="otp" appDigitosDirective>
+          <input matInput type="password" inputmode="numeric" formControlName="otp" autocomplete="otp"
+           appDigitosDirective [appLongitudDirective]="6" maxlength="6">
           @if (otpControl?.hasError('required') && otpControl?.touched) {
             <mat-error>El OTP es obligatorio</mat-error>
           }
-          @if (otpControl?.hasError('length') && otpControl?.touched) {
-            <mat-error>Longitud de OTP invalida</mat-error>
-          }
+          @if (otpControl?.hasError('exactLength') && otpControl?.touched) {
+            <mat-error>No cumple con el formato del OTP</mat-error>
+          }         
         </mat-form-field>
-
-        <!-- Botón validación de Otp -->
+        
         <button mat-raised-button color="primary" type="submit" class="app-button">
           Entrar
         </button>

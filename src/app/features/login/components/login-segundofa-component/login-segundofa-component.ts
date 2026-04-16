@@ -3,6 +3,8 @@ import { FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators } 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DigitosDirective } from '../../../../core/share/directives/digitos-directive';
+import { LongitudDirective } from '../../../../core/share/directives/longitud-directive';
 
 @Component({
   selector: 'app-login-segundofa-component',
@@ -11,7 +13,9 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule, 
+    DigitosDirective,
+    LongitudDirective
   ],
   templateUrl: './login-segundofa-component.html',
   styleUrl: './login-segundofa-component.css',
@@ -24,7 +28,7 @@ export class LoginSegundofaComponent {
   });
 
   onSubmit(): void {
-    
+
   }
 
   get otpControl() {
