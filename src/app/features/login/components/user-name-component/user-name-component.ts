@@ -54,7 +54,6 @@ export class UserNameComponent {
     });
   }
 
-  // ✅ Getters opcionales para usar en el template
   get usernameControl() {
     return this.loginForm.get('username');
   }
