@@ -1,7 +1,10 @@
 export const environment = {
     production: false,
     endpoints: {
-        login: 'http://localhost:5000/api/v1/eshop/Login',
+        login: {
+            username: 'http://localhost:5000/api/v1/eshop/Login/username',
+            segundofa: 'http://localhost:5000/api/v1/eshop/Login/2fa'
+        },
         personas: {
             registro: 'http://localhost:5000/api/v1/eshop/Persona'
         },
