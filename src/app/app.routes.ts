@@ -44,5 +44,5 @@ export const routes: Routes = [
       }
     ]
   },
-  { path: '**', redirectTo: '/login/username' }
+  { path: '**', redirectTo: '/home' }
 ];
