@@ -2,3 +2,9 @@
   transition: box-shadow 0.3s ease;
   border-radius: 5%;
 }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

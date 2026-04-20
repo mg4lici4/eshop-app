@@ -1,5 +1,5 @@
 <div class="app-container">
-  <mat-card >
+  <mat-card>
     <mat-card-header>
       <mat-card-title>Iniciar sesión</mat-card-title>
     </mat-card-header>
@@ -12,10 +12,10 @@
           <mat-label>Correo</mat-label>
           <input matInput type="email" formControlName="username" autocomplete="email">
           @if (usernameControl?.hasError('required') && usernameControl?.touched) {
-            <mat-error>El correo es obligatorio</mat-error>
+          <mat-error>El correo es obligatorio</mat-error>
           }
           @if (usernameControl?.hasError('email') && usernameControl?.touched) {
-            <mat-error>El formato del correo no es válido</mat-error>
+          <mat-error>El formato del correo no es válido</mat-error>
           }
         </mat-form-field>
 
@@ -24,7 +24,7 @@
           <mat-label>Contraseña</mat-label>
           <input matInput type="password" formControlName="password" autocomplete="current-password">
           @if (passwordControl?.hasError('required') && passwordControl?.touched) {
-            <mat-error>La contraseña es obligatoria</mat-error>
+          <mat-error>La contraseña es obligatoria</mat-error>
           }
         </mat-form-field>
 
@@ -32,7 +32,7 @@
         <a routerLink="/persona/registro">Crear cuenta</a>
 
         <!-- Botón de login -->
-        <button mat-raised-button color="primary" type="submit" class="app-button">
+        <button mat-raised-button color="primary" type="submit">
           Entrar
         </button>
       </form>

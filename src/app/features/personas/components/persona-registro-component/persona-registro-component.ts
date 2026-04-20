@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { PersonaService } from '../../../../core/persona/services/persona-service';
 import { PersonaRegistroRequest, PersonaRegistroResponse } from '../../../../core/persona/models/persona-interface';
 import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-persona-registro',
@@ -16,6 +17,7 @@ import { Router } from '@angular/router';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './persona-registro-component.html',
   styleUrls: ['./persona-registro-component.css'],

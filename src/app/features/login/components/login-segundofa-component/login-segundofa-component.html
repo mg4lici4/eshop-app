@@ -11,19 +11,22 @@
         <mat-form-field appearance="outline" class="app-form-field">
           <mat-label>OTP</mat-label>
           <input matInput type="password" inputmode="numeric" formControlName="otp" autocomplete="otp"
-           appDigitosDirective [appLongitudDirective]="6" maxlength="6">
+            appDigitosDirective [appLongitudDirective]="6" maxlength="6">
           @if (otpControl?.hasError('required') && otpControl?.touched) {
-            <mat-error>El OTP es obligatorio</mat-error>
+          <mat-error>El OTP es obligatorio</mat-error>
           }
           @if (otpControl?.hasError('exactLength') && otpControl?.touched) {
-            <mat-error>No cumple con el formato del OTP</mat-error>
-          }         
+          <mat-error>No cumple con el formato del OTP</mat-error>
+          }
         </mat-form-field>
-        
-        <button mat-raised-button color="primary" type="submit" class="app-button">
+        <button mat-raised-button color="primary" type="submit">
           Entrar
         </button>
       </form>
     </mat-card-content>
   </mat-card>
+
+
+
+
 </div>

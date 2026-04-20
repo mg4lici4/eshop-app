@@ -8,6 +8,7 @@ import { LongitudDirective } from '../../../../core/share/directives/longitud-di
 import { AuthCredenciales2FARequest, AuthCredenciales2FAResponse } from '../../../../core/auth/models/auth-interface';
 import { AuthService } from '../../../../core/auth/services/auth-service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatAnchor, MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-login-segundofa-component',
@@ -16,9 +17,11 @@ import { ActivatedRoute, Router } from '@angular/router';
     ReactiveFormsModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule, 
+    MatInputModule,
     DigitosDirective,
-    LongitudDirective
+    LongitudDirective,
+    MatAnchor, 
+    MatButtonModule
   ],
   templateUrl: './login-segundofa-component.html',
   styleUrl: './login-segundofa-component.css',
@@ -42,7 +45,7 @@ export class LoginSegundofaComponent {
 
     this.authService.validarCredenciales2FA(this.generaRequest()).subscribe({
       next: (response: AuthCredenciales2FAResponse) => {
-        localStorage.setItem('2fa', 'true');        
+        localStorage.setItem('2fa', 'true');
         const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
         this.router.navigateByUrl(returnUrl);
       },
@@ -55,10 +58,10 @@ export class LoginSegundofaComponent {
     });
   }
 
-  generaRequest(): AuthCredenciales2FARequest{
+  generaRequest(): AuthCredenciales2FARequest {
     return {
-      otp : this.validarOtpForm.controls.otp.value!,
-      jti : this.authService.getJti()
+      otp: this.validarOtpForm.controls.otp.value!,
+      jti: this.authService.getJti()
     }
   }
 

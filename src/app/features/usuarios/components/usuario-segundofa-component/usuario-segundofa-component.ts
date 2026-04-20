@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DigitosDirective } from '../../../../core/share/directives/digitos-directive';
 import { UsuarioSegundoFaActivarRequest, UsuarioSegundoFaActivarResponse } from '../../../../core/usuario/models/usuario-interface';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
@@ -19,7 +20,8 @@ import { UsuarioSegundoFaActivarRequest, UsuarioSegundoFaActivarResponse } from 
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    DigitosDirective],
+    DigitosDirective,
+    MatButtonModule],
   templateUrl: './usuario-segundofa-component.html',
   styleUrl: './usuario-segundofa-component.css',
 })

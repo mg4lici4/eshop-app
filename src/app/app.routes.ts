@@ -5,9 +5,10 @@ import { authGuard } from './core/auth/auth-guard';
 import { UsuarioCredencialesComponent } from './features/usuarios/components/usuario-credenciales-component/usuario-credenciales-component';
 import { UsuarioSegundoFAComponent } from './features/usuarios/components/usuario-segundofa-component/usuario-segundofa-component';
 import { LoginSegundofaComponent } from './features/login/components/login-segundofa-component/login-segundofa-component';
+import { HomeUsuarioComponent } from './features/home/components/home-usuario-component/home-usuario-component';
 
 export const routes: Routes = [
-  { path: 'home', component: PersonaRegistroComponent, canActivate: [authGuard] },
+  { path: 'home', component: HomeUsuarioComponent, canActivate: [authGuard] },
   {
     path: 'persona',
     children: [

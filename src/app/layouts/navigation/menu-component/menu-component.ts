@@ -13,6 +13,7 @@ export class MenuComponent {
   menuItems = [
     { label: 'Inicio', route: '/home', icon: 'home' },
     { label: 'Personas', route: '/personas', icon: 'people' },
-    { label: 'Configuración', route: '/settings', icon: 'settings' }
+    { label: 'Configuración', route: '/settings', icon: 'settings' },
+    { label: 'Cerrar sesion', route: '/settings', icon: 'logout' }
   ];
 }

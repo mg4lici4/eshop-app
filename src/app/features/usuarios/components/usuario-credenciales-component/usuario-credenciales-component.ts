@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioRegistroRequest } from '../../../../core/usuario/models/usuario-interface';
 import { UsuarioService } from '../../../../core/usuario/services/usuario-service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-usuario-credenciales-component',
@@ -15,6 +16,7 @@ import { UsuarioService } from '../../../../core/usuario/services/usuario-servic
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './usuario-credenciales-component.html',
   styleUrl: './usuario-credenciales-component.css',

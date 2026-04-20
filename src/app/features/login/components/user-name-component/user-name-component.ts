@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../../../../core/auth/services/auth-service';
 import { AuthCredencialesRequest, AuthCredencialesResponse } from '../../../../core/auth/models/auth-interface';
 import { Router, RouterLink } from '@angular/router';
+import { MatAnchor, MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-user-name',
@@ -17,7 +18,9 @@ import { Router, RouterLink } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     RouterLink,
-  ],
+    MatAnchor,
+    MatButtonModule
+],
   templateUrl: './user-name-component.html',
   styleUrls: ['./user-name-component.css'],
 })
