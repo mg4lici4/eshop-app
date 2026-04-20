@@ -5,6 +5,9 @@ export const environment = {
       username: '__LOGIN_USERNAME__',
       segundofa: '__LOGIN_2FA__'
     },
+    sesiones: {
+      cerrar: '__SESION_CERRAR__',
+    },
     personas: { registro: '__PERSONA_REGISTRO__' },
     usuarios: {
       registrar: '__USUARIO_REGISTRAR__',

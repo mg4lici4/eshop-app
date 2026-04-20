@@ -5,4 +5,9 @@
       <span matLine>{{ item.label }}</span>
     </a>
   }
+
+  <a mat-list-item (click)="cerrarSesion()" class="menu-item">
+    <mat-icon matListIcon>logout</mat-icon>
+    <span matLine>Cerrar sesion</span>
+  </a>
 </mat-nav-list>
