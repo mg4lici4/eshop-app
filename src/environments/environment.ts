@@ -5,6 +5,9 @@ export const environment = {
             username: 'http://localhost:5000/api/v1/eshop/Login/username',
             segundofa: 'http://localhost:5000/api/v1/eshop/Login/2fa'
         },
+        sesiones: {
+            cerrar: 'http://localhost:5000/api/v1/eshop/Sesion/cerrar',
+        },
         personas: {
             registro: 'http://localhost:5000/api/v1/eshop/Persona'
         },
