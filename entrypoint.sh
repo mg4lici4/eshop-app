@@ -3,7 +3,9 @@
 echo "🔧 Iniciando sustitución de variables en archivos JS y HTML..."
 
 for file in /usr/share/nginx/html/*.js /usr/share/nginx/html/*.html; do
-  sed -i "s|__LOGIN__|$LOGIN|g" "$file"
+  sed -i "s|__LOGIN_USERNAME__|$LOGIN_USERNAME|g" "$file"
+  sed -i "s|__LOGIN_2FA__|$LOGIN_2FA|g" "$file"
+  sed -i "s|__SESION_CERRAR__|$SESION_CERRAR|g" "$file"
   sed -i "s|__PERSONA_REGISTRO__|$PERSONA_REGISTRO|g" "$file"
   sed -i "s|__USUARIO_REGISTRAR__|$USUARIO_REGISTRAR|g" "$file"
   sed -i "s|__USUARIO_SEGUNDOFA_GENERAR__|$USUARIO_SEGUNDOFA_GENERAR|g" "$file"
